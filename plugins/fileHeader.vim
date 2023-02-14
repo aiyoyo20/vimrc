@@ -59,5 +59,5 @@ endfunction
 autocmd BufNewFile *.sh,*.py,*.go exec ":call AutoSetFileHead()"
 
 " 更新最后修改时间
-autocmd InsertLeave *.{py,c,js,css},*vimrc call AutoUpdateTheLastUpdateInfo()
+autocmd InsertLeave *.{py,sh} call AutoUpdateTheLastUpdateInfo()
 
