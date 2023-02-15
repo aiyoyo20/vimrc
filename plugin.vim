@@ -11,6 +11,7 @@ source $VIM/plugins/nerdtree.vim
 source $VIM/plugins/rainbow.vim
 source $VIM/plugins/tools.vim
 source $VIM/plugins/vim-lsp.vim
+source $VIM/plugins/ale.vim
 source $VIM/plugins/vista.vim
 source $VIM/plugins/whichKey.vim
 
