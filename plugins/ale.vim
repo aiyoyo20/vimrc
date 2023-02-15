@@ -18,7 +18,7 @@ let g:ale_linters = {
     \ 'html':['angular', 'htmlhint', 'vscodehtml'],
     \ 'javascript':['eslint', 'flow-language-server', 'jshint'],
     \ 'typescript':['eslint', 'tslint', 'tsserver', 'typecheck', 'xo'],
-    \ 'markdown'：[]，
+    \ 'markdown':['markdownlint'],
     \ 'sql':['sql-lint'],
-    \ 'vue':[]
+    \ 'vue':['vls']
     \ }
