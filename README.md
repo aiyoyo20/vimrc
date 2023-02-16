@@ -9,6 +9,7 @@
     plugin.vim ： 各插件的集中加载，启用/禁用插件更方便。
     plugins ： 详细的插件设置，一些配置文件较多的单独出来。其他的一些如快速注释、插入文档模板等小工具合为一个。
         单独插件配置：
+            ale.vim
             ctrlp.vim
             rainbow.vim
             vista.vim
@@ -42,7 +43,11 @@
         asyncomplete.vim 和 vim-lsp 的连接工具
 
         ale
-        Asynchronous Lint Engine（异步语法检查引擎），应该是目前 vim 的最强语法检查工具。支持多种语言的多种工具，同种语言的多种语言联合增强使用也是可以的。
+        Asynchronous Lint Engine（异步语法检查引擎），应该是目前 vim 的最强语法检查工具。
+        支持多种语言的多种工具，同种语言的多种语言联合增强使用也是可以的
+        可以指定要使用的 linter，以及 linter 在设备上的地址，就可以不用配置环境变量了
+        支持多种 fixer，格式化插件，引入的模块调整，去除空行，行尾空格等，这样就是不用新增插件 `vim-autoformat`、`vim-trailing-whitespace`。
+        目前看到还支持补全和很多 lsp 的功能，是否替换掉`vim-lsp`有空再仔细对比看看。
 
         vim-lsp-ale
         使 vim-lsp 和 ale 插件互通，联合使用。
@@ -82,9 +87,6 @@
 
         vim-airline-themes
         vim-airline 的主题
-
-        vim-autoformat
-        格式化工具，支持多种语言的多种格式化工具（需要自己安装语言格式化需要的依赖）
 
         vim-pydocstring
         用于在 python 快速插入注释模板
