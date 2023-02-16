@@ -15,8 +15,3 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 Plug 'rafamadriz/friendly-snippets'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'  " 能够把内容集合到补全里面进行选择
-
-" 代码格式化，比如 bash-language-server 不支持代码格式化但代码检查有强制要求
-" 支持的语言很多,而且默认会自动删除尾部多余空格
-Plug 'Chiel92/vim-autoformat'
-let g:formatterpath = ['/home/aiyoyo/go/bin']  " 格式化命令的位置，可添加多个
