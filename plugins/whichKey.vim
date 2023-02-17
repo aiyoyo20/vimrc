@@ -53,7 +53,6 @@ let g:which_key_map = {
       \ '9' :  'Tab9' ,
       \ }
 
-
 nmap <leader>b1 :b1<CR>
 nmap <leader>b2 :b2<CR>
 nmap <leader>b3 :b3<CR>
@@ -81,7 +80,6 @@ let g:which_key_map.b = {
       \ 'p' :  'previous-buffer'  ,
       \ }
 
-
 " commentary.vim
 let g:which_key_map.c = {
       \ 'name' : '+commenter',
@@ -90,11 +88,9 @@ let g:which_key_map.c = {
       \ 'u' : ['ChangeCommentary'  ,  'change commentary'  ],
       \ }
 
-" Vista
 let g:which_key_map.f = {
       \ 'name' : '+find/format/fix',
       \ 'f' : ['CtrlP'          , 'search file'            ],
-      \ 'v' : ['Vista!!'        , 'View and search symbols'],
       \ }
 
 let g:which_key_map.l = {
@@ -124,6 +120,7 @@ nmap <leader>tt2 :Tabularize /,<CR>
 nmap <leader>tt3 :Tabularize /:<CR>
 nmap <leader>tt4 :Tabularize /\|<CR>
 
+" Vista
 " bullets.vim
 " tabular
 " terminal emulation
@@ -156,6 +153,7 @@ let g:which_key_map.t = {
         \ 'r' : ['RenumberSelection' , 'renumber selec line'    ],
         \ 't' : ['ToggleCheckbox'    , 'bullets-toggle-checkbox'],
         \ },
+      \ 'v' : ['Vista!!'        , 'View and search symbols'],
       \ }
 
 let g:which_key_map.w = {
@@ -181,4 +179,3 @@ let g:which_key_map.w = {
 " Register which key map
 autocmd! User vim-which-key call which_key#register('<Space>', "g:which_key_map")
 "*********************************************************************
-
