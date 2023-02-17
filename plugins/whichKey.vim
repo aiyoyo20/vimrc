@@ -115,7 +115,6 @@ let g:which_key_map.w = {
       \ 'v' : ['<C-W>v'     , 'split-window-below'    ] ,
       \ }
 
-" vim-trailing-whitespace
 " Vista
 let g:which_key_map.f = {
       \ 'name' : '+find/format/fix',
@@ -132,12 +131,22 @@ let g:which_key_map.c = {
       \ 'u' : ['ChangeCommentary'  ,  'change commentary'  ],
       \ }
 
+nmap <leader>t1 :Tabularize /=<CR>
+nmap <leader>t2 :Tabularize /,<CR>
+nmap <leader>t3 :Tabularize /:<CR>
+nmap <leader>t4 :Tabularize /\|<CR>
+
 " terminal emulation
 let g:which_key_map.t = {
       \ 'name' : '+find/format',
       \ 'n' : ['NERDTreeToggle', 'open/close file tree' ],
       \ 's' : ['terminal'      , 'terminal emulation'   ],
+      \ '1' : 'align with =',
+      \ '2' : 'align with ,',
+      \ '3' : 'align with :',
+      \ '4' : 'align with |',
       \ }
+
 
 
 let g:which_key_map.l = {
