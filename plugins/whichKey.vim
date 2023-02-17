@@ -132,14 +132,13 @@ let g:which_key_map.c = {
       \ 'u' : ['ChangeCommentary'  ,  'change commentary'  ],
       \ }
 
-" vim-autoformat
 " terminal emulation
 let g:which_key_map.t = {
       \ 'name' : '+find/format',
       \ 'n' : ['NERDTreeToggle', 'open/close file tree' ],
       \ 's' : ['terminal'      , 'terminal emulation'   ],
-      \ 'f' : ['autoformat'    , 'format file'          ],
       \ }
+
 
 let g:which_key_map.l = {
       \ 'name' : '+LSP/Language' ,
@@ -149,12 +148,17 @@ let g:which_key_map.l = {
       \ 'S' : ['LspStatus'                  , 'workspace-symbol'       ] ,
       \ 'r' : ['LspRename'                  , 'Rename symbol'          ] ,
       \ 'd' : ['LspDocumentDiagnostics'     , 'diagnostics information'] ,
-      \ 'n' : ['LspNextError'               , 'next error'             ] ,
-      \ 'p' : ['LspPreviousError'           , 'previous error'         ] ,
+      \ 'b' : ['LspNextError'               , 'next error'             ] ,
+      \ 'a' : ['LspPreviousError'           , 'previous error'         ] ,
       \ 'm' : {
         \ 'name' : '+markdown',
         \ 'p' : ['MarkdownPreview'     , 'Markdown-Preview'       ],
         \ 's' : ['MarkdownPreviewStop' , 'Markdown-Preview-Stop'  ],
+        \ },
+      \ 'p' : {
+        \ 'name' : '+python',
+        \ 'd' :['Pydocstring'     , 'add python doc'   ],
+        \ 'f' :['PydocstringFormat', 'python doc format'],
         \ },
       \ }
 
