@@ -9,6 +9,10 @@ let g:pydocstring_doq_path = '/home/aiyoyo/.local/bin/doq'
 " 指定文档风格
 let g:pydocstring_formatter = 'google'
 
+Plug 'kkoomen/vim-doge', { 'do': 'npm i --no-save && npm run build:binary:unix' }
+let g:doge_doc_standard_python = 'google'
+let g:doge_doc_standard_sh = 'google'
+
 Plug 'lilydjwg/fcitx.vim'
 let g:fcitx5_remote = '/usr/bin/fcitx5-remote'
 let g:fcitx5_rime = 1
