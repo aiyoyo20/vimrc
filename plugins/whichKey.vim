@@ -131,20 +131,30 @@ let g:which_key_map.c = {
       \ 'u' : ['ChangeCommentary'  ,  'change commentary'  ],
       \ }
 
-nmap <leader>t1 :Tabularize /=<CR>
-nmap <leader>t2 :Tabularize /,<CR>
-nmap <leader>t3 :Tabularize /:<CR>
-nmap <leader>t4 :Tabularize /\|<CR>
+nmap <leader>tt1 :Tabularize /=<CR>
+nmap <leader>tt2 :Tabularize /,<CR>
+nmap <leader>tt3 :Tabularize /:<CR>
+nmap <leader>tt4 :Tabularize /\|<CR>
 
+" bullets.vim
+" tabular
 " terminal emulation
 let g:which_key_map.t = {
-      \ 'name' : '+find/format',
+      \ 'name' : '+tools',
       \ 'n' : ['NERDTreeToggle', 'open/close file tree' ],
       \ 's' : ['terminal'      , 'terminal emulation'   ],
-      \ '1' : 'align with =',
-      \ '2' : 'align with ,',
-      \ '3' : 'align with :',
-      \ '4' : 'align with |',
+      \ 't' : {
+        \ 'name' : '+tabular',
+        \ '1' : 'align with =',
+        \ '2' : 'align with ,',
+        \ '3' : 'align with :',
+        \ '4' : 'align with |',
+        \ },
+      \ 'b' : {
+        \ 'name' : '+bullets.vim',
+        \ 'r' : ['RenumberSelection' , 'renumber selec line'    ],
+        \ 't' : ['ToggleCheckbox'    , 'bullets-toggle-checkbox'],
+        \ },
       \ }
 
 
