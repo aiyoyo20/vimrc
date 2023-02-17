@@ -14,6 +14,9 @@ let g:which_key_sep = '→'  " Define a separator
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
 
+" hide all mappings outside of the elements of the description dictionary
+let g:which_key_ignore_outside_mappings = 1
+
 " Change the colors if you want
 highlight default link WhichKey          Operator
 highlight default link WhichKeySeperator DiffAdded
