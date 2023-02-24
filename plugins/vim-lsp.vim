@@ -30,9 +30,6 @@ if executable('gopls')
         \ 'cmd': {server_info->['gopls']},
         \ 'allowlist': ['go'],
         \ })
-   let g:ale_linters = {
-     \   'go': ['vim-lsp', 'golangci-lint'],
-     \ }
 endif
 " }
 
@@ -76,7 +73,6 @@ if executable('golangci-lint-langserver')
       \ })
 endif
 " }
-
 
 " rust-analyzer {
 if executable('rustup')
