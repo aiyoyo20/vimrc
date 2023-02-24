@@ -1,14 +1,10 @@
 " 代码检查
 Plug 'dense-analysis/ale'
-let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 "  linter ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:ale_linters = {
     \ 'sh':['shellcheck'],
-    \ 'python':['pycodestyle', 'flake8', 'pylint'],
+    \ 'python':['pylint'],
     \ 'go':['golangci-lint', 'golint', 'gopls', 'gosimple', 'gotype', 'govet'],
     \ 'proto':['buf_lint', 'protoc-gen-lint', 'protolint'],
     \ 'html':['angular', 'htmlhint', 'vscodehtml'],
@@ -49,11 +45,43 @@ let g:ale_fixers = {
     \ 'sql':['sqlformat', 'sqlfmt', 'sqlfluff'],
     \ }
 
-" remove_trailing_lines  删除空行
-" trim_whitespace  删除行尾空格
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" sign
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" --------------------------------------------------------------------
+
+
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" virtualtext
+
+let g:ale_virtualtext_cursor = 0  " 关闭虚拟文本提示
+" --------------------------------------------------------------------
+
+
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" location list
+
+let g:ale_set_loclist = 1
+let g:ale_open_list = 1   " 设置为 1 ，会在打开文件后自动打开 local list 窗口
+" --------------------------------------------------------------------
+
+
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" linter
 
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
+" --------------------------------------------------------------------
+
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" fix
+
+" remove_trailing_lines  删除空行
+" trim_whitespace  删除行尾空格
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+" --------------------------------------------------------------------
