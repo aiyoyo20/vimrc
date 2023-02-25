@@ -49,9 +49,6 @@
         支持多种 fixer，格式化插件，引入的模块调整，去除空行，行尾空格等，这样就是不用新增插件 `vim-autoformat`、`vim-trailing-whitespace`。
         目前看到还支持补全和很多 lsp 的功能，是否替换掉`vim-lsp`有空再仔细对比看看。
 
-        vim-lsp-ale
-        使 vim-lsp 和 ale 插件互通，联合使用。
-
         vim-lsp
         vim 使用 lsp 的工具，目前已经支持异常浮动可视（异常显示在语句后，而不是光标移动到异常行后才在 airline 等工具上显示）
 
@@ -81,6 +78,9 @@
 
         tabular
         用于文本过滤和对齐
+
+        vim-doge
+        文档生成助手，支持 python 等多种语言
 
         vim-airline
         状态栏增强工具
@@ -127,6 +127,12 @@
 
         vim-startify
         vim 的初始页面美化小工具
+
+        vim-list2tree
+        将 markdown 的列表转为树形式
+
+        vim-devicons
+        为 nerdtree 、vim-startify 等插件添加美化图标，需要安装字体`Nerd-Font`
 
 `whichKey`的部分快捷键设置参考了[spaceVim](https://github.com/liuchengxu/space-vim/blob/master/core/autoload/spacevim/map/leader.vim)，想要自己的快捷键系统也可以去看看做个参考。
 
