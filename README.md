@@ -134,6 +134,9 @@
         vim-devicons
         为 nerdtree 、vim-startify 等插件添加美化图标，需要安装字体`Nerd-Font`
 
+        fork-vim-template
+        fork 自 `aperezdc/vim-template` 的模板补全插件
+
 `whichKey`的部分快捷键设置参考了[spaceVim](https://github.com/liuchengxu/space-vim/blob/master/core/autoload/spacevim/map/leader.vim)，想要自己的快捷键系统也可以去看看做个参考。
 
 ### 使用
@@ -143,4 +146,13 @@
 
 暂时先这样，够用了，后续有其他的再更新。
 
+### TODO
+1. `aperezdc/vim-template` 插件的模板文件修改为自己的样式
+2. 目前插件不能满足个人的点：
+    1. 插件添加模板不能判断当前是否已有模板，会不断追加
+    2. 撤回模板没有相应的命令（其实这个还好，一般只撤销文件头信息，删除头几行就可以了，或者添加后想要撤销可以利用 vim 的 u 撤销）
+    3. 缺少模板更新的功能（在有文件更新时间的前提下希望在每次修改文件后相应的时间跟随变化）
+    4. 或者是更换模板，替换原来的模板风格为当前的风格
+
+暂时先定这样，还没确定是去重写还是在原基础上修改。vim 提供了对 python、lua 等的支持，也有自己的开发语言 vimScript，如何选择还在考虑。
 
