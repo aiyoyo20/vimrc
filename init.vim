@@ -1,30 +1,32 @@
-"*********************************************************************
-"" base
+" *********************************************************************
+" base
 " {
-set nocompatible  " 关闭兼容模式
-set nu  " 设置行号
-set cursorline  "突出显示当前行
-set cursorcolumn  " 突出显示当前列
-set showmatch  " 显示括号匹配
+set nocompatible             " 关闭兼容模式
+set number                   " 显示行号
+set cursorline               " 突出显示当前行
+set cursorcolumn             " 突出显示当前列
+set ruler                    " 显示光标当前位置
+set showmatch                " 显示括号匹配
+set showmode                 " 在状态行上显示当前模式的消息
+set showcmd                  " 在状态行里显示 (部分) 命令
+set colorcolumn = 72,80,100  " 行字符长度域，可设置多个参数
 
 " tab 缩进
-set expandtab  "设置按下 Tab 键，实际输入的是空格
-set tabstop=4  " 设置Tab长度为4空格
-set shiftwidth=4  " 设置自动缩进长度为4空格
-set autoindent  " 继承前一行的缩进方式，适用于多行注释
+set expandtab        " 使用空格替换 tab
+set tabstop    = 4   " 设置Tab长度为4空格
+set shiftwidth = 4   " 设置自动缩进长度为4空格
+set autoindent       " 自动缩进，继承前一行的缩进方式
 
-set incsearch  " 开启实时搜索
-set ignorecase  " 搜索时大小写不敏感
-set laststatus=2  " 总是显示状态栏
-set ruler  " 显示光标当前位置
-set colorcolumn=72,80,100  " 行字符长度域，可设置多个参数
-set autoread  " 表示如果当前文件在 Vim 外被修改且未在 Vim 里面重新载入的话，则自动重新读取。
-set title  " 设置 Vim 窗口标题。
-set noerrorbells  " 关闭错误提示的响铃
-set mouse=nv
+set incsearch        " 开启实时搜索
+set ignorecase       " 搜索时大小写不敏感
+set laststatus  = 2  " 总是显示状态栏
+set autoread         " 有 Vim 之外的改动时自动重读文件
+set autochdir        " 自动切换工作目录
+set title            " 设置 Vim 窗口标题。
+set noerrorbells     " 关闭错误提示的响铃
+set mouse = a        " 允许使用鼠标
 
-syntax enable
-syntax on  " 开启文件类型侦测
+syntax on                  " 打开语法高亮
 filetype plugin indent on  " 启用自动补全
 filetype off
 
@@ -61,12 +63,6 @@ autocmd FileType python nnoremap <buffer> <C-i> :w <RETURN> :!python % <RETURN>
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " }
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-" 设置 Tab 长度
-au BufNewFile,BufRead *.js, *.html, *.css
-\ set tabstop=2 |
-\ set softtabstop=2 |
-\ set shifidth=2
 "*********************************************************************
 
 
