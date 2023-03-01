@@ -14,6 +14,7 @@ source $VIM/plugins/vim-lsp.vim
 source $VIM/plugins/ale.vim
 source $VIM/plugins/vista.vim
 source $VIM/plugins/whichKey.vim
+" source $VIM/plugins/template.vim
 
 " 自己的插件
 source $VIM/plugins/fileHeader.vim
