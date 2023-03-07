@@ -4,8 +4,6 @@
 
 Plug 'liuchengxu/vim-which-key',{ 'on': ['WhichKey', 'WhichKey!'] }
 
-set nocompatible
-
 let g:mapleader="\<Space>"
 let g:which_key_map =  {}  " Create map to add keys to
 let g:which_key_sep = '→'  " Define a separator
@@ -114,6 +112,17 @@ let g:which_key_map.l = {
         \ 'f' :['PydocstringFormat', 'python doc format'],
         \ },
       \ }
+
+nmap <leader>sq :wq<CR>
+nmap <leader>ss :w<CR>
+nmap <leader>st :sort<CR>
+let g:which_key_map.s = {
+      \ 'name' : '+sort/save',
+      \ 's' : 'save file'            ,
+      \ 'q' : 'save file and exit'   ,
+      \ 't' : 'sort content'         ,
+      \ }
+
 
 nmap <leader>tt1 :Tabularize /=<CR>
 nmap <leader>tt2 :Tabularize /,<CR>
