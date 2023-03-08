@@ -124,14 +124,17 @@ let g:which_key_map.s = {
       \ }
 
 
+" tabular
 nmap <leader>tt1 :Tabularize /=<CR>
 nmap <leader>tt2 :Tabularize /,<CR>
 nmap <leader>tt3 :Tabularize /:<CR>
 nmap <leader>tt4 :Tabularize /\|<CR>
 
-" Vista
 " bullets.vim
-" tabular
+nmap <leader>tbs :RenumberSelection<CR>
+nmap <leader>tba :RenumberList<CR>
+
+" Vista
 " terminal emulation
 let g:which_key_map.t = {
       \ 'name' : '+tools',
@@ -159,8 +162,8 @@ let g:which_key_map.t = {
         \ },
       \ 'b' : {
         \ 'name' : '+bullets.vim',
-        \ 'r' : ['RenumberSelection' , 'renumber selec line'    ],
-        \ 't' : ['ToggleCheckbox'    , 'bullets-toggle-checkbox'],
+        \ 's' : 'renumber select',
+        \ 'a' : 'renumber all'   ,
         \ },
       \ 'v' : ['Vista!!'        , 'View and search symbols'],
       \ }
