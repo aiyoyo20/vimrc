@@ -9,22 +9,22 @@ set ruler                    " 显示光标当前位置
 set showmatch                " 显示括号匹配
 set showmode                 " 在状态行上显示当前模式的消息
 set showcmd                  " 在状态行里显示 (部分) 命令
-set colorcolumn = 72,80,100  " 行字符长度域，可设置多个参数
+set colorcolumn=72,80,100    " 行字符长度域，可设置多个参数
 
 " tab 缩进
 set expandtab        " 使用空格替换 tab
-set tabstop    = 4   " 设置Tab长度为4空格
-set shiftwidth = 4   " 设置自动缩进长度为4空格
+set tabstop=4        " 设置Tab长度为4空格
+set shiftwidth=4     " 设置自动缩进长度为4空格
 set autoindent       " 自动缩进，继承前一行的缩进方式
 
 set incsearch        " 开启实时搜索
 set ignorecase       " 搜索时大小写不敏感
-set laststatus  = 2  " 总是显示状态栏
+set laststatus=2     " 总是显示状态栏
 set autoread         " 有 Vim 之外的改动时自动重读文件
 set autochdir        " 自动切换工作目录
 set title            " 设置 Vim 窗口标题。
 set noerrorbells     " 关闭错误提示的响铃
-set mouse = a        " 允许使用鼠标
+set mouse=a        " 允许使用鼠标
 
 syntax on                  " 打开语法高亮
 filetype plugin indent on  " 启用自动补全
