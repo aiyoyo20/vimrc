@@ -116,11 +116,13 @@ let g:which_key_map.l = {
 nmap <leader>sq :wq<CR>
 nmap <leader>ss :w<CR>
 nmap <leader>st :sort<CR>
+nmap <leader>su :sort u<CR>
 let g:which_key_map.s = {
       \ 'name' : '+sort/save',
       \ 's' : 'save file'            ,
       \ 'q' : 'save file and exit'   ,
       \ 't' : 'sort content'         ,
+      \ 'u' : 'sort unique'          ,
       \ }
 
 
