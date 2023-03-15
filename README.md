@@ -139,6 +139,29 @@
 
 `whichKey`的部分快捷键设置参考了[spaceVim](https://github.com/liuchengxu/space-vim/blob/master/core/autoload/spacevim/map/leader.vim)，想要自己的快捷键系统也可以去看看做个参考。
 
+### 使用的 linter 、fixer 介绍
+去对比了几乎所有的工具，有的工具的功能是类似的，不过遵循的规范略有不同，这样的选择一种即可，太多有可能造成冲突。而有的工具是在前一个或多个的基础上进行封装，好处就是安装一次，其他的作为依赖会自动安装，当然依赖也可以独立使用，但是问题在于如果指定这个集合多个工具的包，在检查的时候，提示的信息来自这个集合而不是具体的某个子项，在排查的时候会麻烦一些，不能第一时间反应是代码规范、类型、文档缺失、还是安全检查不过关等等。
+
+- python
+  - mypy   ： 官方的检查工具，能够对注解进行检查，校验类型正确性
+  - pylint ： 包括但不限于文档检查，基于 mccabe 的代码复杂度检查等等
+  - pycle  ： 提示和删除引入但未使用的包
+  - bandit ： 安全检查
+  - vulture： 查找无用的 Python 代码
+  - refurb ： 自动化 Python 代码修复和重构的工具，让代码更优雅
+  - 
+  - isort      ： 对引入包进行排序
+  - pyflyby    ： 引入使用但未引入的包、删除未使用的包、重命名包等
+  - 
+  - 下面的三种格式化工具选择一个即可
+  - [X] black      ： uncompromising Python code formatter ，目前使用的
+  - [  ] yapf       ： google 推出的格式化工具
+  - [  ] ruff       ： rust 写的格式化工具，很快
+
+- shell
+  - shellcheck ： shell 语法检查，有异常码，能够对症修改
+  - shfmt      ： shell 格式化
+
 ### 使用
 在自行安装好 vim 和 neovim 后运行 `install.sh` 文件会自动将配置复制到合适的位置，等待完成即可。
 
