@@ -5,23 +5,29 @@ Plug 'dense-analysis/ale'
 let g:ale_linters = {
     \ 'sh':['shellcheck'],
     \ 'python':[
-        \ 'pycodestyle',
         \ 'mypy',
         \ 'pylint',
-        \ 'pycln',
-        \ 'unimport',
         \ 'vulture',
         \ 'refurb',
         \ 'bandit'],
-    \ 'go':['golangci-lint', 'golint', 'gopls', 'gosimple', 'gotype', 'govet'],
-    \ 'proto':['buf_lint', 'protoc-gen-lint', 'protolint'],
+    \ 'go':[
+        \ 'golangci-lint',
+        \ 'golint',
+        \ 'gopls',
+        \ 'gosimple',
+        \ 'gotype',
+        \ 'govet'],
+    \ 'proto':[
+        \ 'buf_lint',
+        \ 'protoc-gen-lint',
+        \ 'protolint'],
     \ 'html':['angular', 'htmlhint', 'vscodehtml'],
-    \ 'css':['csslint', 'fecs', 'stylelint', 'vscodecss'],
+    \ 'css':['stylelint'],
     \ 'javascript':['eslint', 'flow-language-server', 'jshint'],
     \ 'typescript':['eslint', 'tslint', 'tsserver', 'typecheck', 'xo'],
     \ 'vue':['vls'],
-    \ 'json':['eslint', 'jq', 'jsonlint', 'spectral', 'vscodejson'],
-    \ 'yaml':['yaml-language-server'],
+    \ 'json':['eslint', 'jsonlint'],
+    \ 'yaml':['yaml-language-server',],
     \ 'toml':['dprint'],
     \ 'dockerfile':['dockerfile_lint'],
     \ 'markdown':['markdownlint'],
@@ -33,22 +39,23 @@ let g:ale_python_pylint_use_msg_id=1
 
 
 " fixer ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"  ruff、yapf、black
+"  使用不同的格式化规则和算法，因此它们之间可能会发生冲突，选择一个即可
 let g:ale_fixers = {
     \ '*': ['trim_whitespace'],
     \ 'sh':['shfmt'],
     \ 'python':[
         \ 'add_blank_lines_for_python_control_statements',
-        \ 'autoflake',
-        \ 'autopep8',
         \ 'black',
         \ 'isort',
-        \ 'pycln',
         \ 'pyflyby',
-        \ 'reorder-python-imports',
-        \ 'ruff',
-        \ 'yapf',
         \ ],
-    \ 'go':['gofmt', 'gopls', 'goimports', 'golines', 'gofumpt',],
+    \ 'go':[
+        \ 'gofmt',
+        \ 'gopls',
+        \ 'goimports',
+        \ 'golines',
+        \ 'gofumpt',],
     \ 'proto':['protolint'],
     \ 'html':['prettier'],
     \ 'css':['prettier'],
@@ -56,11 +63,11 @@ let g:ale_fixers = {
     \ 'typescript':['dprint', 'prettier'],
     \ 'vue':['vls', 'prettier'],
     \ 'json':['dprint', 'prettier'],
-    \ 'yaml':['yamlfix', 'prettier'],
+    \ 'yaml':['prettier'],
     \ 'toml':['dprint'],
     \ 'dockerfile':['dprint'],
     \ 'markdown':['dprint', 'prettier'],
-    \ 'sql':['sqlformat', 'sqlfmt', 'sqlfluff'],
+    \ 'sql':['sqlfluff', 'sqlformat'],
     \ }
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
