@@ -30,7 +30,7 @@ let g:ale_linters = {
     \ 'yaml':['yaml-language-server',],
     \ 'toml':['dprint'],
     \ 'dockerfile':['dockerfile_lint'],
-    \ 'markdown':['markdownlint'],
+    \ 'markdown':['vale', 'alex', 'remark-lint'],
     \ 'sql':['sql-lint'],
     \ }
 
@@ -66,7 +66,7 @@ let g:ale_fixers = {
     \ 'yaml':['prettier'],
     \ 'toml':['dprint'],
     \ 'dockerfile':['dprint'],
-    \ 'markdown':['dprint', 'prettier'],
+    \ 'markdown':['remark-lint'],
     \ 'sql':['sqlfluff', 'sqlformat'],
     \ }
 
