@@ -17,6 +17,7 @@ let g:ale_linters = {
         \ 'gosimple',
         \ 'gotype',
         \ 'govet'],
+    \ 'lua':['luacheck', 'lua-language-server'],
     \ 'proto':[
         \ 'buf_lint',
         \ 'protoc-gen-lint',
@@ -56,6 +57,7 @@ let g:ale_fixers = {
         \ 'goimports',
         \ 'golines',
         \ 'gofumpt',],
+    \ 'lua':['lua-format'],
     \ 'proto':['protolint'],
     \ 'html':['prettier'],
     \ 'css':['prettier'],
