@@ -3,7 +3,9 @@ Plug 'dense-analysis/ale'
 
 "  linter ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:ale_linters = {
-    \ 'sh':['shellcheck'],
+    \ 'sh':[
+        \ 'shellcheck',
+        \ 'language-server'],
     \ 'python':[
         \ 'mypy',
         \ 'pylint',
@@ -49,7 +51,6 @@ let g:ale_fixers = {
         \ 'add_blank_lines_for_python_control_statements',
         \ 'black',
         \ 'isort',
-        \ 'pyflyby',
         \ ],
     \ 'go':[
         \ 'gofmt',
