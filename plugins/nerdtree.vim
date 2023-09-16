@@ -1,6 +1,6 @@
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Plug 'jistr/vim-nerdtree-tabs'  " 可以使 nerdtree Tab 标签的名称更友好些
-Plug 'scrooloose/nerdtree'  " 用来提供一个导航目录的侧边栏
+Plug 'preservim/nerdtree'       " 用来提供一个导航目录的侧边栏
 
 " NERDTree configuration
 let g:NERDTreeChDirMode     = 2
