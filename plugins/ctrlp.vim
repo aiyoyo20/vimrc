@@ -1,5 +1,5 @@
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Plug 'kien/ctrlp.vim'  " 文件搜索
+Plug 'ctrlpvim/ctrlp.vim'  " 文件搜索
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
 
