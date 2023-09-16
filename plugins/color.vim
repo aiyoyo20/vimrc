@@ -5,7 +5,7 @@ Plug 'mhinz/vim-startify'
 
 Plug 'ryanoasis/vim-devicons'  " 图标管理
 
-set termguicolors  " 开启24bit的颜色，开启这个颜色会更漂亮一些
+set termguicolors    " 开启24bit的颜色，开启这个颜色会更漂亮一些
 colorscheme gruvbox  " 主题
 set background=dark  " 主题背景 dark-深色; light-浅色
 
