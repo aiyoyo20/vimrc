@@ -31,7 +31,6 @@ filetype plugin indent on  " 启用自动补全
 filetype off
 
 " 加载子模块
-let $VIM = "/home/aiyoyo/vimrc"
 source $VIM/plugin.vim
 
 " }
@@ -57,6 +56,9 @@ autocmd! bufwritepost $HOME/.vimrc source %
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 退出插入模式指定类型的文件自动保存
 au InsertLeave *.go,*.sh,*.py,*.md,*.js,*.css,*.html,*.txt write
+
+" ibus 输入法在退出插入模式后将输入法切换至英文
+autocmd InsertLeave * call system('ibus engine xkb:us::eng &')
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Python runner:
 autocmd FileType python nnoremap <buffer> <C-i> :w <RETURN> :!python % <RETURN>
