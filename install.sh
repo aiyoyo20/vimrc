@@ -4,14 +4,6 @@
 # last modified : 2023-02-14 01:43:10
 
 # for vim
-mkdir ~/vimrc
-cp -r * ~/vimrc
+mkdir ~/.config/vimrc
+cp -r * ~/.config/vimrc
 cp ".vimrc" ~
-
-# for neovim
-mkdir ~/.config/nvim
-cat > ~/config/nvim/init.vim <<EOF
-set runtimepath^=~/.vim
-let &packpath = &runtimepath
-source ~/.vimrc  " Source Vimrc file
-EOF
