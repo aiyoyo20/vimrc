@@ -3,38 +3,51 @@ Plug 'dense-analysis/ale'
 
 "  linter ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:ale_linters = {
+    \ 'html':['proselint','tidy','htmlhint'],
+    \ 'css':['stylelint'],
+    \ 'javascript':['xo','standard'],
+    \ 'typescript':['xo','standard'],
+    \ 'vue':['vls'],
     \ 'sh':[
+        \ 'language-server',
         \ 'shellcheck',
-        \ 'language-server'],
+        \ ],
+    \ 'lua':[
+        \ 'luacheck', 
+        \ 'lua-language-server',
+        \ ],
+    \ 'vim':[
+        \ 'vint',
+        \ 'vimls',
+        \ ],
+    \ 'go':[
+        \ 'golangci_lint',
+        \ 'revive',
+        \ 'gopls',
+        \ ],
     \ 'python':[
+        \ 'bandit',
         \ 'mypy',
         \ 'pylint',
-        \ 'vulture',
         \ 'refurb',
-        \ 'bandit'],
-    \ 'go':[
-        \ 'golangci-lint',
-        \ 'golint',
-        \ 'gopls',
-        \ 'gosimple',
-        \ 'gotype',
-        \ 'govet'],
-    \ 'lua':['luacheck', 'lua-language-server'],
+        \ 'vulture',
+        \ ],
+    \ 'json':['jq', 'spectral'],
+    \ 'yaml':[
+        \ 'ls',
+        \ 'spectral',
+        \ 'yamllint',
+        \],
     \ 'proto':[
         \ 'buf_lint',
         \ 'protoc-gen-lint',
-        \ 'protolint'],
-    \ 'html':['angular', 'htmlhint', 'vscodehtml'],
-    \ 'css':['stylelint'],
-    \ 'javascript':['eslint', 'flow-language-server', 'jshint'],
-    \ 'typescript':['eslint', 'tslint', 'tsserver', 'typecheck', 'xo'],
-    \ 'vue':['vls'],
-    \ 'json':['eslint', 'jsonlint'],
-    \ 'yaml':['yaml-language-server',],
-    \ 'toml':['dprint'],
-    \ 'dockerfile':['dockerfile_lint'],
-    \ 'markdown':['vale', 'alex', 'remark-lint'],
-    \ 'sql':['sql-lint'],
+        \ 'protolint',
+        \ ],
+    \ 'sql':['sqlfluff'],
+    \ 'dockerfile':['hadolint'],
+    \ 'markdown':['markdownlint','marksman'],
+    \ 'gitcommit':['gitlint'],
+    \ 'awk':['gawk'],
     \ }
 
 " pylint setting
@@ -46,31 +59,31 @@ let g:ale_python_pylint_use_msg_id=1
 "  使用不同的格式化规则和算法，因此它们之间可能会发生冲突，选择一个即可
 let g:ale_fixers = {
     \ '*': ['trim_whitespace'],
+    \ 'html':['prettier'],
+    \ 'css':['prettier'],
+    \ 'javascript':['dprint', 'prettier','xo','standard'],
+    \ 'typescript':['dprint', 'xo'],
+    \ 'vue':['prettier'],
     \ 'sh':['shfmt'],
+    \ 'lua':['stylua'],
+    \ 'vim':[],
+    \ 'go':[
+        \ 'revive',
+        \ 'gopls',
+        \ 'goimports',
+        \ 'gofumpt',],
     \ 'python':[
         \ 'add_blank_lines_for_python_control_statements',
         \ 'black',
         \ 'isort',
         \ ],
-    \ 'go':[
-        \ 'gofmt',
-        \ 'gopls',
-        \ 'goimports',
-        \ 'golines',
-        \ 'gofumpt',],
-    \ 'lua':['lua-format'],
-    \ 'proto':['protolint'],
-    \ 'html':['prettier'],
-    \ 'css':['prettier'],
-    \ 'javascript':['dprint', 'prettier'],
-    \ 'typescript':['dprint', 'prettier'],
-    \ 'vue':['vls', 'prettier'],
-    \ 'json':['dprint', 'prettier'],
-    \ 'yaml':['prettier'],
+    \ 'json':['jq'],
+    \ 'yaml':['yamlfmt','yamlfix','prettier'],
     \ 'toml':['dprint'],
+    \ 'proto':['protolint','buf-format'],
+    \ 'sql':['sqlfluff'],
     \ 'dockerfile':['dprint'],
-    \ 'markdown':['remark-lint'],
-    \ 'sql':['sqlfluff', 'sqlformat'],
+    \ 'markdown':['prettier','pandoc'],
     \ }
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
