@@ -1,7 +1,10 @@
 ### 简介
 
-原来使用的单配置文件 ".vimrc"
-，但是随着使用时间的增加，为了更方便，添加了越来越对的插件和配置，整个文件的代码量已经很大了，几百行，虽然自己做了文件内内容分类，并且使用了比较醒目的块注释来区分各板块，在需要修改的时候仍然还是费劲。所以进行了简单的模块化处理。
+原来使用的单配置文件 ".vimrc"。
+
+但是随着使用时间的增加，为了更方便，添加了越来越多的插件和配置，整个文件的代码量已经很大了，几百行，虽然自己做了较为详细的内容分类，并且使用了比较醒目的块注释来区分各板块，在需要修改的时候仍然还是费劲。
+
+所以进行了简单的模块化处理。
 
 主板块如下：
 
@@ -23,9 +26,9 @@
         编程相关：
             code.vim
             markdown.vim
-            vim-LSPp.vim  主要是 vim-LSPp 插件的配置项
+            vim-lsp.vim  主要是 vim-lsp 插件的配置项
         工具集合：
-            tooLSP.vim
+            toos.vim
         自定义的插件：
             fileHeader.vim
 
@@ -39,15 +42,15 @@
         asyncomplete-file.vim
         用于提示补全目录、文件名
 
-        asyncomplete-LSPp.vim
-        asyncomplete.vim 和 vim-LSPp 的连接工具
+        asyncomplete-lsp.vim
+        asyncomplete.vim 和 vim-lsp 的连接工具
 
         ale
         Asynchronous Lint Engine（异步语法检查引擎），应该是目前 vim 的最强语法检查工具。
         支持多种语言的多种工具，同种语言的多种语言联合增强使用也是可以的
         可以指定要使用的 linter，以及 linter 在设备上的地址，就可以不用配置环境变量了
         支持多种 fixer，格式化插件，引入的模块调整，去除空行，行尾空格等，这样就是不用新增插件 `vim-autoformat`、`vim-trailing-whitespace`。
-        目前看到还支持补全和很多 LSPp 的功能，是否替换掉`vim-LSPp`有空再仔细对比看看。
+        目前看到还支持补全和很多 lsp 的功能，是否替换掉`vim-lsp`有空再仔细对比看看。
 
         vim-lsp
         vim 使用 LSP 的工具，目前已经支持异常浮动可视（异常显示在语句后，而不是光标移动到异常行后才在 airline 等工具上显示）
@@ -217,7 +220,7 @@ dockerfile-language-server-nodejs](https://github.com/rcjsuen/dockerfile-languag
 
 ### Linter、Fixer
 
-#### html:
+#### html
 
 [proselint](https://github.com/amperser/proselint/)(Linter)
 
@@ -231,7 +234,7 @@ dockerfile-language-server-nodejs](https://github.com/rcjsuen/dockerfile-languag
 
     sudo npm install htmlhint -g
 
-#### css:
+#### css
 
 [csslint](https://github.com/CSSLint/csslint)(Linter)
 
@@ -247,13 +250,13 @@ dockerfile-language-server-nodejs](https://github.com/rcjsuen/dockerfile-languag
 
     sudo npm install -g standard
 
-#### vue:
+#### vue
 
 [prettier](https://github.com/prettier/prettier)(Linter)(Fixer)
 
     sudo npm install prettier
 
-#### bash:
+#### bash
 
 [bash-language-server](https://github.com/bash-LSPp/bash-language-server)(LSP)(Linter)
 
@@ -268,7 +271,7 @@ sudo apt install shellcheck
 
     go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
-#### lua:
+#### lua
 
 [lua-language-server](https://github.com/LuaLS/lua-language-server)(LSP)(Linter)
 
@@ -278,7 +281,7 @@ sudo apt install shellcheck
 
 [stylua](https://github.com/johnnymorganz/stylua)(Fixer)
 
-#### vim:
+#### vim
 
 [vim-language-server](https://github.com/iamcco/vim-language-server)(LSP)(Linter)
 
@@ -288,7 +291,7 @@ sudo apt install shellcheck
 
     pip install vim-vint
 
-#### go:
+#### go
 
 [golangci-lint](https://github.com/golangci/golangci-lint)(Linter)
 
@@ -302,7 +305,7 @@ sudo apt install shellcheck
 
     go install mvdan.cc/gofumpt@latest
 
-#### python:
+#### python
 
 [python-lsp-server](https://github.com/python-lsp/python-lsp-server)(LSP)(Linter)
 
@@ -352,7 +355,7 @@ code formatter ，目前使用的
 
     pip install ruff
 
-#### json:
+#### json
 
 [spectral](https://github.com/stoplightio/spectral)(Linter)
 
@@ -360,7 +363,7 @@ code formatter ，目前使用的
 
 [jq](https://github.com/jqlang/jq)(Linter)(Fixer)
 
-#### yaml:
+#### yaml
 
 [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)(LSP)(Linter)
 
@@ -382,7 +385,7 @@ code formatter ，目前使用的
 
     sudo npm install -g prettier
 
-#### proto:
+#### proto
 
 [buf](https://github.com/bufbuild/buf)(Linter)(Fixer)
 
@@ -402,7 +405,7 @@ code formatter ，目前使用的
 
     pip install sqlfluff
 
-#### dockerfile:
+#### dockerfile
 
 [hadolint](https://github.com/hadolint/hadolint)(Linter)
 
@@ -425,20 +428,16 @@ code formatter ，目前使用的
 在自行安装好 vim 后运行 `install.sh`
 文件会自动将配置复制到合适的位置，等待完成即可。
 
-`checkInstall.sh`
-脚本可用于检查需要的一些语言环境和脚本环境。因为各语言的版本比较多，自己的版本并没有什么意义，就不给出了。会尝试安装所有工具。如`goLSP`、`shellcheck`、`pyLSP`等。如果有语言环境就能正常安装，比如系统都自带了
-python ，所以 pyLSP 都能安装，而 go 不是默认的，没有配置，goLSP
-就会安装失败。
-
 ### TODO
 
-1.  `aperezdc/vim-template` 插件的模板文件修改为自己的样式
-2.  目前插件不能满足个人的点：
-    1.  插件添加模板不能判断当前是否已有模板，会不断追加
-    2.  撤回模板没有相应的命令（其实这个还好，一般只撤销文件头信息，删除头几行就可以了，或者添加后想要撤销可以利用
-        vim 的 u 撤销）
-    3.  缺少模板更新的功能（在有文件更新时间的前提下希望在每次修改文件后相应的时间跟随变化）
-    4.  或者是更换模板，替换原来的模板风格为当前的风格
+1.`aperezdc/vim-template` 插件的模板文件修改为自己的样式
+
+2.目前插件不能满足个人的点：
+
+    1.插件添加模板不能判断当前是否已有模板，会不断追加
+    2.撤回模板没有相应的命令（其实这个还好，一般只撤销文件头信息，删除头几行就可以了，或者添加后想要撤销可以利用 vim 的 u 撤销）
+    3.缺少模板更新的功能（在有文件更新时间的前提下希望在每次修改文件后相应的时间跟随变化）
+    4.或者是更换模板，替换原来的模板风格为当前的风格
 
 暂时先定这样，还没确定是去重写还是在原基础上修改。vim 提供了对
 python、lua 等的支持，也有自己的开发语言 vimScript，如何选择还在考虑。
