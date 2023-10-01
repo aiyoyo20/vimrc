@@ -1,7 +1,6 @@
 " *********************************************************************
 " base
 " {
-set nocompatible             " 关闭兼容模式
 set number                   " 显示行号
 set cursorline               " 突出显示当前行
 set cursorcolumn             " 突出显示当前列
@@ -50,19 +49,22 @@ source $VIM/plugin.vim
 "*********************************************************************
 "" Commands
 " {
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" 保存 .vimrc 文件后，配置立刻生效
-autocmd! bufwritepost $HOME/.vimrc source %
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" 退出插入模式指定类型的文件自动保存
-au InsertLeave *.go,*.sh,*.py,*.md,*.js,*.css,*.html,*.txt write
-
-" ibus 输入法在退出插入模式后将输入法切换至英文
-autocmd InsertLeave * call system('ibus engine xkb:us::eng &')
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Python runner:
-autocmd FileType python nnoremap <buffer> <C-i> :w <RETURN> :!python % <RETURN>
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+augroup AutoCmd
+    autocmd!
+    
+    " 退出插入模式指定类型的文件自动保存
+    autocmd InsertLeave *.go,*.sh,*.py,*.md,*.js,*.css,*.html,*.txt write
+    
+    " ibus 输入法在退出插入模式后将输入法切换至英文
+    autocmd InsertLeave * call system('ibus engine xkb:us::eng &')
+    autocmd VimEnter * silent! !ibus engine xkb:us::eng
+    
+    " Python runner
+    autocmd FileType python nnoremap <buffer> <C-i> :w <RETURN> :!python % <RETURN>
+    
+    " 保存 .vimrc 文件后，配置立刻生效
+    autocmd! bufwritepost $HOME/.vimrc source %
+augroup END
 " }
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "*********************************************************************
