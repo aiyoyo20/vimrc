@@ -421,8 +421,6 @@ code formatter ，目前使用的
 
     sudo npm install -g markdownlint-cli
 
-[pandoc](https://github.com/jgm/pandoc)
-
 ### 使用
 
 在自行安装好 vim 后运行 `install.sh`
