@@ -83,7 +83,7 @@ let g:ale_fixers = {
     \ 'proto':['protolint','buf-format'],
     \ 'sql':['sqlfluff'],
     \ 'dockerfile':['dprint'],
-    \ 'markdown':['prettier','pandoc'],
+    \ 'markdown':['prettier'],
     \ }
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
