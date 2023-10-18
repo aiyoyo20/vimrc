@@ -1,6 +1,5 @@
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Plug 'jiangmiao/auto-pairs'     " 自动补全括号的插件，包括小括号，中括号，以及花括号
-Plug 'godlygeek/tabular'        " 对齐
 Plug 'preservim/nerdcommenter'  " 快速注释
 
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
