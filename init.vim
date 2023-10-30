@@ -29,6 +29,8 @@ syntax on                  " 打开语法高亮
 filetype plugin indent on  " 启用自动补全
 filetype off
 
+set clipboard=unnamed  " 将寄存器与系统剪贴板进行关联
+
 " 加载子模块
 source $VIM/plugin.vim
 
