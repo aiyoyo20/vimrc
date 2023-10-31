@@ -73,6 +73,7 @@
         自定义的插件：(所有自定义的都带有Custom)
 
             09_Custom_fileHeader.vim
+            09_Custom_ibus.vim
 
     .vimrc : 用户的初始加载信息
 ```
