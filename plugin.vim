@@ -16,6 +16,7 @@ source $VIM/plugins/03_Plug_vista.vim
 source $VIM/plugins/03_Plug_whichKey.vim
 source $VIM/plugins/08_tools.vim
 source $VIM/plugins/09_Custom_fileHeader.vim
+source $VIM/plugins/09_Custom_ibus.vim
 
 call plug#end()  " 插件结束的位置，插件全部放在此行上面
 " ===========================插件结束==================================
