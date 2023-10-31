@@ -28,7 +28,8 @@
 │        ├── 03_Plug_vista.vim
 │        ├── 03_Plug_whichKey.vim
 │        ├── 08_tools.vim
-│        └── 09_Custom_fileHeader.vim
+│        ├── 09_Custom_fileHeader.vim
+│        └── 09_Custom_ibus.vim
 ├── plugin.vim
 └── README.md
 └── .vimrc
