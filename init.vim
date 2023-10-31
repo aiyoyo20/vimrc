@@ -1,4 +1,4 @@
-" *********************************************************************
+"*********************************************************************
 " base
 " {
 set number                   " 显示行号
@@ -52,20 +52,15 @@ source $VIM/plugin.vim
 "" Commands
 " {
 augroup AutoCmd
-    autocmd!
     
     " 退出插入模式指定类型的文件自动保存
     autocmd InsertLeave *.go,*.sh,*.py,*.md,*.js,*.css,*.html,*.txt write
     
-    " ibus 输入法在退出插入模式后将输入法切换至英文
-    autocmd InsertLeave * call system('ibus engine xkb:us::eng &')
-    autocmd VimEnter * silent! !ibus engine xkb:us::eng
-    
     " Python runner
     autocmd FileType python nnoremap <buffer> <C-i> :w <RETURN> :!python % <RETURN>
     
-    " 保存 .vimrc 文件后，配置立刻生效
-    autocmd! bufwritepost $HOME/.vimrc source %
+    " 保存 .vimrc 文件后，配置立刻生效(暂时保留吧，如果是模块化的，改动的不是这个文件，这条命令并无实际意义)
+    " autocmd! BufWritePost $HOME/.vimrc source %
 augroup END
 " }
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
